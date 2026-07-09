@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ecommerce-demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      var stored = localStorage.getItem("theme");
+      var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">Shop Demonstration</a>
+
+      <nav id="nav-links" class="nav-links" aria-label="Product categories">
+        <a href="#" class="nav-link active" data-category="all">All</a>
+        <a href="#" class="nav-link" data-category="accessories">Accessories</a>
+        <a href="#" class="nav-link" data-category="electronics">Electronics</a>
+        <a href="#" class="nav-link" data-category="plants">Plants</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+          <span class="theme-icon theme-icon-light">☀️</span>
+          <span class="theme-icon theme-icon-dark">🌙</span>
+        </button>
+        <button id="cart-toggle" class="cart-toggle" aria-label="Open cart">
+          🛒 <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-bar">
+    <div class="search-bar-inner">
+      <input
+        type="search"
+        id="search-input"
+        class="search-input"
+        placeholder="Search products&hellip;"
+        aria-label="Search products"
+      />
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <h1>New Arrivals</h1>
+      <p>Simple Storefront Demonstration &mdash; plain HTML, CSS &amp; JS.</p>
+    </section>
+
+    <section id="product-grid" class="product-grid" aria-label="Products"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Maxwell. All rights reserved.</p>
+  </footer>
+
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <aside id="cart-panel" class="cart-panel" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close" class="cart-close" aria-label="Close cart">&times;</button>
+    </div>
+    <ul id="cart-items" class="cart-items"></ul>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
