@@ -1,6 +1,6 @@
 # Ecommerce Demo
 
-A lightweight storefront demo built with plain HTML, CSS, and JavaScript — no framework, no build step, no dependencies. It showcases a full front-end shopping experience: product browsing, search and category filtering, a persistent cart, per-product photo selection, and a light/dark theme toggle.
+A lightweight storefront demo built with plain HTML, CSS, and JavaScript — no framework, no build step, and only a single dev dependency (for linting). It showcases a full front-end shopping experience: product browsing, search and category filtering, a persistent cart, per-product photo selection, and a light/dark theme toggle.
 
 ## Features
 
@@ -33,13 +33,27 @@ This is a static site — no installation or build step is required.
    ```
    Then visit `http://localhost:8080`.
 
+## Linting
+
+The project uses [ESLint](https://eslint.org) to catch JavaScript errors and enforce a few basic code-quality rules in `script.js`. This is the project's only dependency — a single devDependency (`eslint`), added purely for static analysis, with no runtime dependencies at all.
+
+```bash
+npm install
+npm run lint
+```
+
+Linting also runs automatically in CI via GitHub Actions on every push and pull request to `main` (see `.github/workflows/lint.yml`).
+
 ## Project Structure
 
 ```
 ecommerce-demo/
-├── index.html               # Page markup and layout
-├── styles.css                # Theming, layout, and component styles
+├── index.html                 # Page markup and layout
+├── styles.css                 # Theming, layout, and component styles
 ├── script.js                  # Product data, cart logic, and UI interactions
+├── eslint.config.js           # ESLint configuration
+├── package.json                # Single devDependency (eslint) and lint script
+├── .github/workflows/lint.yml # CI workflow that runs ESLint
 └── images/
     └── products/
         └── <product-id>/      # 3 photos per product (1.jpg, 2.jpg, 3.jpg)

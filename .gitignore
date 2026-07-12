@@ -2,7 +2,7 @@
 ##secret_config.json
 
 # Ignore a whole folder
-##node_modules/
+node_modules/
 
 # Ignore all files with a specific extension
 *.txt

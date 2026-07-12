@@ -1,0 +1,12 @@
+{
+  "name": "ecommerce-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A lightweight storefront demo built with plain HTML, CSS, and JavaScript.",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^10.7.0"
+  }
+}
