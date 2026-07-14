@@ -486,10 +486,18 @@ body {
   height: 24px;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
+  color: var(--color-text);
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
   line-height: 1;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.qty-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-color: var(--color-accent);
 }
 
 .cart-empty {
